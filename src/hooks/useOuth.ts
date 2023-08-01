@@ -13,19 +13,14 @@ const useOuth = (token: string | null) => {
   const oauthQueryParams = {
     client_id: clientId,
     response_type: 'token',
-    redirect_uri: 'http://localhost:5173/test-softer/test'
+    redirect_uri: 'https://alexandr7944.github.io/test-softer/test'
   };
 
-  const tokenPageOrigin = "http://localhost:5173";
-
-  const suggestParams = {
-    view: 'button',
-    buttonBorderRadius: 15
-  };  
+  const tokenPageOrigin = "https://alexandr7944.github.io";
 
   (async () => {
     try {
-      const response = await window.YaAuthSuggest.init(oauthQueryParams, tokenPageOrigin, suggestParams);
+      const response = await window.YaAuthSuggest.init(oauthQueryParams, tokenPageOrigin);
       if (response.ok) console.log(response);
       const result = await response.handler();
       result?.access_token && localStorage.setItem('access_token', result.access_token);
