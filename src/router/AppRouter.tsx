@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import { routes } from './routes';
-import { Outh } from '../pages/Outh';
+// import { Outh } from '../pages/Outh';
 
 export const AppRouter = () => {
   return (
@@ -16,7 +16,7 @@ export const AppRouter = () => {
           )
         }
       </Route>
-      <Route  path='/*' element={<Outh />} />
+      {/* <Route  path='/*' element={<Outh />} /> */}
     </Routes>
   )
 }
